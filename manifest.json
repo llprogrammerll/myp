@@ -1,6 +1,7 @@
 {
   "name": "Arduino Mobile Lab",
   "short_name": "ArduinoLab",
+  "description": "Mobile Learning for Arduino I/O, PWM & Interrupts",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,6 +10,11 @@
     {
       "src": "assets/logo.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]

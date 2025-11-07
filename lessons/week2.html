@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 2: PWM & Hardware Interrupts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <style> /* Same as week1 */ </style>
+</head>
+<body>
+  <h2>Week 2: PWM Fade & attachInterrupt()</h2>
+  <p><strong>Goal:</strong> Fade LED with analogWrite() & toggle on button press.</p>
+  
+  <!-- Quiz section like Week 1 -->
+  
+  <h3>Code Editor</h3>
+  <textarea id="code">// Week 2: PWM + Interrupt
+volatile bool interrupted = false;
+int brightness = 0;
+
+void setup() {
+  pinMode(9, OUTPUT); // PWM pin
+  attachInterrupt(digitalPinToInterrupt(2), isr, FALLING); // Button interrupt
+}
+
+void loop() {
+  analogWrite(9, brightness);
+  brightness = (brightness + 5) % 256;
+  delay(30);
+  
+  if (interrupted) {
+    interrupted = false; // Debounce
+    // Toggle action here
+  }
+}
+
+void IRAM_ATTR isr() {
+  interrupted = true;
+}</textarea>
+  
+  <button onclick="runCode()">Run Simulator</button>
+  <iframe id="sim" src="https://wokwi.com/projects/380000000001/share" style="display:none;"></iframe>
+  
+  <!-- Same CodeMirror script as Week 1, update localStorage key to 'week2-code' -->
+  <a href="index.html"><button>← Back</button></a>
+</body>
+</html>

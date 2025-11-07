@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arduino Mobile Lab</title>
-  <link rel="manifest" href="manifest.json"/>
-  <link rel="icon" href="assets/logo.png"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/logo.png" type="image/png">
   <style>
-    body { font-family: Arial; margin: 0; padding: 20px; background: #f0f2f5; }
-    .card { background: white; margin: 15px 0; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    button { background: #0066cc; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 16px; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f0f2f5; color: #333; }
     h1 { text-align: center; color: #0066cc; }
+    .card { background: white; margin: 15px 0; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    button { background: #0066cc; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #0052a3; }
+    @media (prefers-color-scheme: dark) { body { background: #121212; color: #fff; } .card { background: #1e1e1e; } }
   </style>
 </head>
 <body>
-  <h1>Arduino I/O Lab</h1>
+  <h1>🛠️ Arduino I/O Mastery Lab</h1>
+  <p style="text-align: center;">4-Week Mobile Course: Digital, Analog, PWM, Interrupts & Timers</p>
+  
   <div class="card">
-    <h3>Week 1: Digital & Analog</h3>
-    <p>Learn digitalRead(), analogRead()</p>
-    <a href="lessons/week1.html"><button>Start →</button></a>
+    <h3>Week 1: Digital & Analog I/O</h3>
+    <p>Buttons, LEDs, Potentiometers & Serial Plotting</p>
+    <a href="lessons/week1.html"><button>Start Week 1 →</button></a>
   </div>
+  
   <div class="card">
-    <h3>Week 2: PWM & Interrupts</h3>
-    <a href="lessons/week2.html"><button>Start →</button></a>
+    <h3>Week 2: PWM & Hardware Interrupts</h3>
+    <p>Fading LEDs, Button Debounce & attachInterrupt()</p>
+    <a href="lessons/week2.html"><button>Start Week 2 →</button></a>
   </div>
+  
+  <div class="card">
+    <h3>Week 3: Timer0/1 Software Interrupts</h3>
+    <p>Non-blocking Blinks, CTC Mode & ISR Timing</p>
+    <a href="lessons/week3.html"><button>Start Week 3 →</button></a>
+  </div>
+  
+  <div class="card">
+    <h3>Week 4: Capstone Project</h3>
+    <p>Build & Submit: Smart Doorbell or Reaction Game</p>
+    <a href="lessons/week4.html"><button>Start Capstone →</button></a>
+  </div>
+  
+  <div class="card">
+    <h3>📤 Submit Work</h3>
+    <p>Upload .ino files & videos</p>
+    <a href="upload.html"><button>Upload Now →</button></a>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.prompt(); // Auto-prompt install
+    });
+  </script>
 </body>
 </html>

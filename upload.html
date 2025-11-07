@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Work</title>
+  <style> body { font-family: Arial; padding: 20px; } button { background: #28a745; } </style>
+</head>
+<body>
+  <h2>📤 Submit Your Lab</h2>
+  <form id="uploadForm">
+    <label>Upload .ino File:</label><br>
+    <input type="file" id="file" accept=".ino"><br><br>
+    
+    <label>Demo Video (Phone Record):</label><br>
+    <input type="file" id="video" accept="video/*"><br><br>
+    
+    <label>Student ID:</label><br>
+    <input type="text" id="studentId" placeholder="e.g., CE12345"><br><br>
+    
+    <button type="button" onclick="submitFiles()">Submit to Instructor</button>
+  </form>
+  
+  <script>
+    async function submitFiles() {
+      const file = document.getElementById('file').files[0];
+      const video = document.getElementById('video').files[0];
+      const id = document.getElementById('studentId').value;
+      
+      if (!file || !id) { alert('Add file & ID!'); return; }
+      
+      // Simulate upload (in real: use FormData + fetch to your email/Google Drive)
+      alert(`Submitted: ${file.name} from ${id}. Check email for confirmation.`);
+      // Real upload: fetch('https://your-backend.com/upload', { method: 'POST', body: formData });
+    }
+  </script>
+  <a href="index.html"><button>← Home</button></a>
+</body>
+</html>
