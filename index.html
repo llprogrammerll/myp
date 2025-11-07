@@ -1,45 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My PWA</title>
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#0ea5e9">
-  <link rel="icon" href="/assets/icons/icon-192.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arduino Mobile Lab</title>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" href="assets/logo.png"/>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; 
-           margin:0; padding:2rem; line-height:1.6; }
-    .app { max-width: 720px; margin: 0 auto; }
-    header { display:flex; align-items:center; gap:.75rem; }
-    header img { width:48px; height:48px; border-radius:12px; }
-    .card { border:1px solid rgba(0,0,0,.1); border-radius:16px; padding:1rem 1.25rem; box-shadow:0 2px 10px rgba(0,0,0,.05); }
-    button { padding:.75rem 1rem; border-radius:12px; border:none; cursor:pointer; }
+    body { font-family: Arial; margin: 0; padding: 20px; background: #f0f2f5; }
+    .card { background: white; margin: 15px 0; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    button { background: #0066cc; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 16px; }
+    h1 { text-align: center; color: #0066cc; }
   </style>
 </head>
 <body>
-  <div class="app">
-    <header>
-      <img src="/assets/icons/icon-192.png" alt="App icon">
-      <h1>My PWA</h1>
-    </header>
-    <p>This is a minimal Progressive Web App starter. It installs, works offline, and is ready to deploy.</p>
-
-    <div class="card">
-      <h2>Test Offline</h2>
-      <p>Once the page loads, turn your browser to <em>Offline</em> mode and refresh. You should still see this page, served from the service worker cache.</p>
-      <button onclick="alert('PWA ready!')">Click me</button>
-    </div>
-
-    <p style="opacity:.7; margin-top:2rem;">Edit <code>manifest.json</code> for app name/colors and replace icons in <code>/assets/icons</code>.</p>
+  <h1>Arduino I/O Lab</h1>
+  <div class="card">
+    <h3>Week 1: Digital & Analog</h3>
+    <p>Learn digitalRead(), analogRead()</p>
+    <a href="lessons/week1.html"><button>Start →</button></a>
   </div>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js');
-      });
-    }
-  </script>
+  <div class="card">
+    <h3>Week 2: PWM & Interrupts</h3>
+    <a href="lessons/week2.html"><button>Start →</button></a>
+  </div>
 </body>
 </html>
