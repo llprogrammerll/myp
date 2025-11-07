@@ -8,7 +8,8 @@
   <h2>Week 3: Software Interrupts with Timers</h2>
   <p><strong>Goal:</strong> Blink LED using Timer1 CTC (no delay()).</p>
   
-  <textarea id="code">// Week 3: Timer1 ISR
+  <textarea id="code" style="width:100%; height:60vh; font-family:monospace; font-size:14px;">
+// Week 3: Timer1 ISR
 void setupTimer1() {
   noInterrupts();
   TCCR1A = 0; TCCR1B = 0;
