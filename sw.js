@@ -1,4 +1,4 @@
-const CACHE = 'arduino-lab-v1';
+const CACHE = 'arduino-lab-v2';
 const FILES = [
   '/',
   '/index.html',
